@@ -1,0 +1,101 @@
+object Form5: TForm5
+  Left = 927
+  Top = 189
+  Width = 1305
+  Height = 681
+  Caption = 'Form5'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object DBGrid1: TDBGrid
+    Left = 32
+    Top = 344
+    Width = 320
+    Height = 120
+    DataSource = DataSource1
+    TabOrder = 0
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'MS Sans Serif'
+    TitleFont.Style = []
+  end
+  object Button1: TButton
+    Left = 280
+    Top = 312
+    Width = 75
+    Height = 25
+    Caption = #1055#1086#1080#1089#1082
+    TabOrder = 1
+    OnClick = Button1Click
+  end
+  object Edit1: TDBEdit
+    Left = 144
+    Top = 320
+    Width = 121
+    Height = 21
+    TabOrder = 2
+  end
+  object MySQLQuery1: TMySQLQuery
+    Database = Form4.MySQLDatabase1
+    SQL.Strings = (
+      'SELECT * FROM glagolev_tovar WHERE zena > 1000')
+    Left = 360
+    Top = 376
+  end
+  object MySQLDatabase1: TMySQLDatabase
+    Connected = True
+    DatabaseName = 'bh35910_kis'
+    UserName = 'bh35910_student1711'
+    UserPassword = 'pgu2023pgu2023'
+    Host = '91.219.194.4'
+    ConnectOptions = []
+    Params.Strings = (
+      'Port=3306'
+      'TIMEOUT=30'
+      'DatabaseName=bh35910_kis'
+      'UID=bh35910_student1711'
+      'PWD=pgu2023pgu2023'
+      'Host=91.219.194.4')
+    DatasetOptions = []
+    Left = 360
+    Top = 344
+  end
+  object DataSource1: TDataSource
+    DataSet = MySQLQuery1
+    Left = 360
+    Top = 408
+  end
+  object frxReport1: TfrxReport
+    DotMatrixReport = False
+    IniFile = '\Software\Fast Reports'
+    PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator]
+    PreviewOptions.Zoom = 1.000000000000000000
+    PrintOptions.Printer = #1055#1086' '#1091#1084#1086#1083#1095#1072#1085#1080#1102
+    ReportOptions.CreateDate = 45616.925371076390000000
+    ReportOptions.LastChange = 45616.925371076390000000
+    ScriptLanguage = 'PascalScript'
+    ScriptText.Strings = (
+      'begin'
+      ''
+      'end.')
+    Left = 392
+    Top = 376
+    Datasets = <>
+    Variables = <>
+    Style = <>
+  end
+  object frxDBDataset1: TfrxDBDataset
+    UserName = 'frxDBDataset1'
+    CloseDataSource = False
+    DataSource = DataSource1
+    Left = 392
+    Top = 344
+  end
+end

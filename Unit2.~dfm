@@ -1,0 +1,154 @@
+object Form2: TForm2
+  Left = 554
+  Top = 258
+  Width = 767
+  Height = 590
+  Caption = 'Form2'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 48
+    Top = 80
+    Width = 59
+    Height = 13
+    Caption = #1050#1086#1083#1080#1095#1077#1089#1090#1074#1086
+  end
+  object Label2: TLabel
+    Left = 48
+    Top = 40
+    Width = 31
+    Height = 13
+    Caption = #1058#1086#1074#1072#1088
+  end
+  object Label3: TLabel
+    Left = 48
+    Top = 112
+    Width = 26
+    Height = 13
+    Caption = #1062#1077#1085#1072
+  end
+  object DBGrid1: TDBGrid
+    Left = 40
+    Top = 136
+    Width = 665
+    Height = 345
+    DataSource = DataSource1
+    TabOrder = 0
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'MS Sans Serif'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'idtovar'
+        Width = 40
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'tovar'
+        Width = 460
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'edizm'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'zena'
+        Visible = True
+      end>
+  end
+  object DBNavigator1: TDBNavigator
+    Left = 40
+    Top = 488
+    Width = 640
+    Height = 25
+    DataSource = DataSource1
+    TabOrder = 1
+  end
+  object DBEdit1: TDBEdit
+    Left = 112
+    Top = 40
+    Width = 593
+    Height = 21
+    DataField = 'tovar'
+    DataSource = DataSource1
+    TabOrder = 2
+  end
+  object DBEdit2: TDBEdit
+    Left = 112
+    Top = 104
+    Width = 593
+    Height = 21
+    DataField = 'zena'
+    DataSource = DataSource1
+    TabOrder = 3
+  end
+  object DBEdit3: TDBEdit
+    Left = 112
+    Top = 72
+    Width = 593
+    Height = 21
+    DataField = 'edizm'
+    DataSource = DataSource1
+    TabOrder = 4
+  end
+  object MySQLDatabase1: TMySQLDatabase
+    Connected = True
+    DatabaseName = 'RTRS'
+    UserName = 'root'
+    UserPassword = 'D_!ww/tW*e.YvywV'
+    Host = '127.0.0.1'
+    ConnectOptions = []
+    ConnectionCharacterSet = 'utf8mb3'
+    ConnectionCollation = 'utf8mb3_general_ci'
+    Params.Strings = (
+      'Port=3306'
+      'TIMEOUT=30'
+      'DatabaseName=RTRS'
+      'UID=root'
+      'PWD=D_!ww/tW*e.YvywV'
+      'Host=127.0.0.1')
+    DatasetOptions = []
+    Left = 56
+    Top = 520
+  end
+  object MySQLTable1: TMySQLTable
+    Database = MySQLDatabase1
+    TableName = 'glagolev_tovar'
+    Left = 96
+    Top = 520
+  end
+  object DataSource1: TDataSource
+    DataSet = MySQLTable1
+    Left = 216
+    Top = 528
+  end
+  object MySQLTable2: TMySQLTable
+    Database = MySQLDatabase1
+    Left = 152
+    Top = 520
+  end
+  object ADOConnection1: TADOConnection
+    ConnectionString = 'Provider=MSDASQL.1'
+    Provider = 'MSDASQL.1'
+    Left = 400
+    Top = 528
+  end
+  object ADOTable1: TADOTable
+    Left = 536
+    Top = 544
+  end
+end
